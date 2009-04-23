@@ -1,141 +1,169 @@
-/*
-
-.footer {
-	background-color: gray;
-}
-	
-.header {
-	background-color: gray;
-}
-	
-.gwt-DecoratorPanel  {
-	background-color: olive;
-	max-width: 30 em;
-	
-}
-
-*/
-
- .gwt-DecoratorPanel .middleCenter {
-   height: 100%;
-   width: 100%;
-	background-color: olive;
- }
- 
-/*
-td {
-	border: thin;
-	border-color: black;
-	border-style: solid;
-}
-*/
-
-/*
-.gwt-VerticalPanel tr {
-	background-color: purple;
-}
-
-.gwt-DecoratedTabBar {
-}
-
-.gwt-DecoratedTabBar .gwt-TabBarFirst {
-  width: 5px;  
-}
-
-.gwt-DecoratedTabBar .gwt-TabBarRest {
-}
-
-.gwt-DecoratedTabBar .gwt-TabBarItem {
-  border-collapse: collapse;
-  margin-left: 6px;
-}
-
-.gwt-DecoratedTabBar .tabTopCenter {
-  padding: 0px;
-  background: #e3e3e3;
-}
-
-.gwt-DecoratedTabBar .tabTopLeft,
-.gwt-DecoratedTabBar .tabTopRight {
-  padding: 0px;
+/**
+ * Applied to the main layout of the page.
+ */
+.Application-Reference-standard { 
+  height: 5px;
+  width: 5px;
   zoom: 1;
 }
-
-.gwt-DecoratedTabBar .tabTopLeftInner,
-.gwt-DecoratedTabBar .tabTopRightInner {
-  width: 6px;
-  height: 6px;
+.Application-top {
+  width: 100%;
+  margin-bottom: 10px;
 }
-
-.gwt-DecoratedTabBar .tabTopLeft {
-  background: url(images/corner.png) no-repeat 0px -55px;
-  -background: url(images/corner_ie6.png) no-repeat 0px -55px;
+.Application-title {
+  padding: 0px 0px 0px 10px;
 }
-
-.gwt-DecoratedTabBar .tabTopRight {
-  background: url(images/corner.png) no-repeat -6px -55px;
-  -background: url(images/corner_ie6.png) no-repeat -6px -55px;
+.Application-title h1 {
+  color: #67A7E3;
+  margin: 0px;
+  padding: 0px 0px 0px 4px;
+  font-size: 22px;
 }
-
-.gwt-DecoratedTabBar .tabMiddleLeft,
-.gwt-DecoratedTabBar .tabMiddleRight {
-  width: 6px;
+.Application-title h2 {
+  color: #888;
+  margin: 0px;
+  padding: 0px 0px 0px 4px;
+  font-size: 16px;
+}
+.Application-links {
+  padding: 2px 13px 2px 0px;
+  background: #C3D9FF;
+}
+.Application-links .gwt-HTML{
+  font-size: 12px;
+}
+.Application-options {
+  padding: 6px 10px 0px 0px;
+}
+.Application-options .gwt-ListBox {
+  width: 150px;
+  font-size: 11px;
+  color: blue;
+  margin-left: 4px;
+}
+.Application-options td {
+  font-size: 12px;
+}
+.Application-options .gwt-ToggleButton {
+  width: 36px;
+  height: 16px;
+  margin: 3px 0px 0px 10px;
   padding: 0px;
-  background: #e3e3e3 url(images/hborder.png) repeat-x 0px -1463px;
+}
+.Application-options .gwt-ToggleButton-down,
+.Application-options .gwt-ToggleButton-down-hovering {
+  cursor: default;
+}
+.Application-options .sc-ThemeButton-standard {
+  background: #d0e4f6;
+}
+.Application-options .sc-ThemeButton-chrome {
+  background: #ccc;
+}
+.Application-options .sc-ThemeButton-dark {
+  background: #3d3d3d;
+}
+.Application-menu {
+  width: 18em;
+  text-align: left;
 }
 
-.gwt-DecoratedTabBar .tabMiddleLeftInner,
-.gwt-DecoratedTabBar .tabMiddleRightInner {
-  width: 1px;
-  height: 1px;
+/**
+ * Applied to widgets in the content area.
+ */
+.Application-content-decorator {
+  margin-right: 8px;
+}
+.Application-content-title {
+  padding: 4px 0px 3px 6px;
+  text-align: left;
+  background: #e3e8f3 url(../gwt/standard/images/hborder.png) repeat-x 0px -2003px;
+  border-bottom: 2px solid #bbcdf3;
+}
+.Application-content-title .gwt-TabBarItem {
+  background: none;
+  padding: 0px;
+}
+.Application-content-title  .gwt-TabBarItem .gwt-Label {
+  padding-right: 20px;
+  color: #888888;
+}
+.Application-content-title  .gwt-TabBarItem-selected .gwt-Label {
+  color: black;
+}
+.Application-content-wrapper {
+  text-align: left;
+}
+.sc-ContentWidget {
+  padding: 10px 20px;
+}
+.sc-ContentWidget-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.sc-ContentWidget-description {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #7aa5d6;
+  margin-bottom: 15px;
+}
+.sc-ContentWidget pre {
+  border: 1px solid #888;
+  background: #eeeeee;
+  padding: 10px 2px;
+  margin: 10px 0px;
+}
+.sc-FixedWidthButton {
+  width: 10em;
 }
 
-.gwt-DecoratedTabBar .tabMiddleCenter {
-  padding: 0px 4px 2px 4px;
+/**
+ * Applied to specific components in Content Widgets.
+ */
+.cw-BasicPopup-thumb {
   cursor: pointer;
   cursor: hand;
-  color: black;
+}
+
+.cw-DictionaryExample-headerRow td {
+  color: #7aa5d6;
+  text-decoration: underline;
   font-weight: bold;
-  text-align: center;
-  background: #e3e3e3 url(images/hborder.png) repeat-x 0px -1463px;
+  padding-left: 20px;
+}
+.cw-DictionaryExample-dataRow td {
+  padding-left: 20px;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopCenter {
-  background: #747474;
+.cw-DockPanel td {
+  border: 1px solid #BBBBBB;
+  padding: 3px;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopLeft {
-  background-position: 0px -61px;
+.cw-FlexTable td {
+  border: 1px solid #BBBBBB;
+  padding: 3px;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopRight {
-  background-position: -6px -61px;
+.cw-FlexTable-buttonPanel td {
+  border: 0px;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleLeft,
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleRight {
-  background: #bcbcbc url(images/hborder.png) repeat-x 0px -2511px;
+.cw-FlowPanel-checkBox {
+  margin-right: 20px;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleCenter {
-  cursor: default;
-  background: #bcbcbc url(images/hborder.png) repeat-x 0px -2511px;
-  color: white;
+.cw-RedText {
+  color: red;
 }
 
-.gwt-DecoratedTabBar .gwt-TabBarItem-disabled .tabMiddleCenter {
-  cursor: default;
-  color: #999999;
+.cw-RichText {
+  border: 1px solid #BBBBBB;
+  border-spacing: 0px;
 }
 
-html>body .gwt-DecoratedTabBar {
+.cw-StackPanelHeader {
+  padding-left: 7px;
+  font-weight: bold;
+  font-size: 1.4em;
 }
-
-* html .gwt-DecoratedTabBar .tabTopLeftInner,
-* html .gwt-DecoratedTabBar .tabTopRightInner {
-  width: 6px;
-  height: 6px;
-  overflow: hidden;
-}
-
-*/
