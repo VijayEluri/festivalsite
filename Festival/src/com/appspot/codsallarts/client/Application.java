@@ -144,9 +144,7 @@ public class Application extends Composite implements ResizeHandler,
     bottomPanel.setSpacing(0);
     bottomPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
     layout.add(bottomPanel);
-    createMainMenu();
-    bottomPanel.add(mainMenu);
-
+    
     // Setup the content layout
     contentLayout = new Grid(2, 1);
     contentLayout.setCellPadding(0);
@@ -175,6 +173,9 @@ public class Application extends Composite implements ResizeHandler,
     contentLayout.setWidget(1, 0, contentWrapper);
     formatter.setStyleName(1, 0, DEFAULT_STYLE_NAME + "-content-wrapper");
     setContent(null);
+
+    createMainMenu();
+    bottomPanel.add(mainMenu);
 
     // Add a window resize handler
     Window.addResizeHandler(this);
