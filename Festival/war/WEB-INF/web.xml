@@ -5,20 +5,22 @@
 
 <web-app>
 
+
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>pageServlet</servlet-name>
+    <servlet-class>com.appspot.codsallarts.server.PageServiceImpl</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>pageServlet</servlet-name>
+    <url-pattern>/festival/page</url-pattern>
+  </servlet-mapping>
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Festival.html</welcome-file>
   </welcome-file-list>
-  
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.appspot.codsallarts.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/festival/greet</url-pattern>
-  </servlet-mapping>
-
 </web-app>

@@ -165,7 +165,7 @@ public class Application extends Composite implements ResizeHandler,
     CellFormatter formatter = contentLayout.getCellFormatter();
 
     // Add the content title
-    setContentTitle(new HTML("Content"));
+    setContentTitle(new HTML("Welcome"));
     formatter.setStyleName(0, 0, DEFAULT_STYLE_NAME + "-content-title");
 
     // Add the content wrapper
@@ -245,7 +245,7 @@ public class Application extends Composite implements ResizeHandler,
    */
   public void setContent(Widget content) {
     if (content == null) {
-      contentWrapper.setWidget(new HTML("&nbsp;"));
+      contentWrapper.setWidget(new HTML("Coming Soon"));
     } else {
       contentWrapper.setWidget(content);
     }

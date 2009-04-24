@@ -72,7 +72,8 @@
  * Applied to widgets in the content area.
  */
 .Application-content-decorator {
-  margin-right: 8px;
+  margin-left: 8px;
+  
 }
 .Application-content-title {
   padding: 4px 0px 3px 6px;
