@@ -1,9 +1,7 @@
 package com.appspot.codsallarts.server;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
@@ -11,7 +9,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-
+import com.appspot.codsallarts.client.NotLoggedInException;
 import com.appspot.codsallarts.client.PageNotFoundException;
 import com.appspot.codsallarts.client.PageService;
 import com.appspot.codsallarts.client.PageVersion;
@@ -26,7 +24,9 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	private static final long serialVersionUID = 1L;
 
 
-	public PageVersion store(PageVersion page) {
+	public PageVersion store(PageVersion page) throws NotLoggedInException {
+		
+		LoginServiceImpl.checkLoggedIn();
 		
 	    PersistenceManager pm = getPersistenceManager();
 	    PageVersionPersistable storable = new PageVersionPersistable();
@@ -47,13 +47,14 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 		newPage.setContent(storable.getContent());
 		newPage.setCreatedAt(storable.getCreatedAt());
 		newPage.setId(storable.getId());
-		LOG.info("Created PageVersion with ID " + newPage.getId());
+		LOG.warning("Created PageVersion with ID " + newPage.getId());
 		return newPage;
 	}
 	
 	
 	@SuppressWarnings("unchecked")
-	public PageVersion getPage(long id) throws PageNotFoundException {
+	public PageVersion getPage(long id) throws PageNotFoundException, NotLoggedInException {
+		LoginServiceImpl.checkLoggedIn();
 		PersistenceManager pm = getPersistenceManager();
 		List <PageVersionPersistable> results = null;
 		try {
@@ -73,26 +74,34 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	}
 
 	@SuppressWarnings("unchecked")
-	public PageVersion getLatestPage(String name) {
+	public PageVersion getLatestPage(String name) throws NotLoggedInException {
 		PersistenceManager pm = getPersistenceManager();
 		List<PageVersionPersistable> results = null;
 		try {
-		Query q = pm.newQuery(PageVersionPersistable.class, "pageName == name");		
+		Query q = pm.newQuery(PageVersionPersistable.class);
+		q.setFilter("pageName == name");
+
 		q.declareParameters("String name");
-		q.setOrdering("createdAt");
-		q.setRange(1, 1);
+
+		q.setOrdering("createdAt desc");
+
+		q.setRange(0,1);
+
 		results = (List<PageVersionPersistable>) q.execute(name);
+		results.size();
+		
 		} finally {
 			pm.close();
 		}
 		
-		if (results == null || results.size() == 0){		
+		if (results == null || results.size() == 0){
 			PageVersion page = new PageVersion();
 			page.setPageName(name);
 			page.setContent("Double-click to start");
-			return this.store(page);
+			return page;
 		} else {
-			PageVersionPersistable persisted = results.get(0);
+			PageVersionPersistable persisted = results.get(results.size() - 1);
+			
 			return makeClientVersion(persisted);
 		}
 	}
@@ -110,6 +119,7 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	private PersistenceManager getPersistenceManager() {
 		return PMF.getPersistenceManager();
 	}
+
 
 
 }
