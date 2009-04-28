@@ -1,6 +1,7 @@
 package com.appspot.codsallarts.client;
-
+import com.appspot.codsallarts.client.images.*;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -19,7 +20,7 @@ public class Festival implements EntryPoint {
 
 	private Application app = new Application();
 	
-	
+	FestivalIconBundle icons = (FestivalIconBundle)GWT.create(FestivalIconBundle.class);
 	
 
 	public void onModuleLoad() {
@@ -40,7 +41,7 @@ public class Festival implements EntryPoint {
 		// Add the title and some images to the title bar
 		HorizontalPanel titlePanel = new HorizontalPanel();
 		titlePanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
-		titlePanel.add(new Image("jimmyThumb.jpg"));
+		titlePanel.add(new Image("images/jimmyThumb.jpg"));
 		titlePanel.add(new HTML(pageTitle));
 		app.setTitleWidget(titlePanel);
 //
