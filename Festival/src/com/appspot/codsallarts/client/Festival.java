@@ -1,11 +1,8 @@
 package com.appspot.codsallarts.client;
-import com.appspot.codsallarts.client.images.*;
-import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.appspot.codsallarts.client.images.FestivalIconBundle;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
