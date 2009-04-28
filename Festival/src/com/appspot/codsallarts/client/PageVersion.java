@@ -1,6 +1,7 @@
 package com.appspot.codsallarts.client;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class PageVersion implements Serializable {
 
@@ -8,7 +9,7 @@ public class PageVersion implements Serializable {
 
 	private String content = "";
 	private String pageName = "";
-	private String createdAt = "";
+	private Date createdAt;
 	private long id = 0;
 	
 	public PageVersion(){
@@ -32,11 +33,11 @@ public class PageVersion implements Serializable {
 		this.pageName = pageName;
 	}
 
-	public String getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(String createdAt) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
 

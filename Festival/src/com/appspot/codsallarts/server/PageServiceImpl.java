@@ -32,7 +32,7 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	    PageVersionPersistable storable = new PageVersionPersistable();
 	    storable.setContent(page.getContent());
 	    storable.setPageName(page.getPageName());
-	    storable.setCreatedAt(new Date().toString());
+	    storable.setCreatedAt(new Date());
 	    if (page.getId() != 0){
 	    	storable.setId(page.getId());
 	    }

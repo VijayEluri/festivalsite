@@ -1,4 +1,6 @@
 package com.appspot.codsallarts.server;
+import java.util.Date;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
@@ -8,7 +10,7 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class PageVersionPersistable  {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -19,7 +21,7 @@ public class PageVersionPersistable  {
 	@Persistent
 	private String pageName;
 	@Persistent
-	private String createdAt;
+	private Date createdAt;
 	
 	public PageVersionPersistable(){
 		
@@ -42,11 +44,11 @@ public class PageVersionPersistable  {
 		this.pageName = pageName;
 	}
 
-	public String getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(String createdAt) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
 
