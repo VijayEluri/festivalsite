@@ -15,6 +15,8 @@
  */
 package com.appspot.codsallarts.client;
 
+import java.util.List;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.logical.shared.HasSelectionHandlers;
 import com.google.gwt.event.logical.shared.ResizeEvent;
@@ -186,11 +188,15 @@ public class Application extends Composite implements ResizeHandler,
    * 
    * @param link the widget to add to the mainLinks
    */
-  public void addLink(Widget link) {
-    if (linksPanel.getWidgetCount() > 0) {
-      linksPanel.add(new HTML("&nbsp;|&nbsp;"));
-    }
-    linksPanel.add(link);
+  public void setLinks(List<Widget> links) {
+	  boolean first = true;
+	  for (Widget w: links){
+		  if (!first){
+			  linksPanel.add(new HTML("&nbsp;|&nbsp;"));
+			  first = false;
+		  }
+		  linksPanel.add(w);
+	  }
   }
 
   public HandlerRegistration addSelectionHandler(

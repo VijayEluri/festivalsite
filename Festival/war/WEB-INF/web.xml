@@ -12,7 +12,15 @@
     <servlet-name>pageServlet</servlet-name>
     <servlet-class>com.appspot.codsallarts.server.PageServiceImpl</servlet-class>
   </servlet>
+ <servlet>
+    <servlet-name>loginService</servlet-name>
+    <servlet-class>com.appspot.codsallarts.server.LoginServiceImpl</servlet-class>
+  </servlet>
 
+  <servlet-mapping>
+    <servlet-name>loginService</servlet-name>
+    <url-pattern>/festival/login</url-pattern>
+  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>pageServlet</servlet-name>

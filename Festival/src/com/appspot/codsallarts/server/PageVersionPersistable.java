@@ -15,11 +15,11 @@ public class PageVersionPersistable  {
 	private Long id;
 	
 	@Persistent
-	private String content = "";
+	private String content;
 	@Persistent
-	private String pageName = "";
+	private String pageName;
 	@Persistent
-	private String createdAt = "";
+	private String createdAt;
 	
 	public PageVersionPersistable(){
 		
@@ -58,7 +58,14 @@ public class PageVersionPersistable  {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer("PVP:");
+		sb.append(id).append(":").append(pageName).append(":").append(createdAt).append(":").append(content);
+		return sb.toString();
+	}
 
+	
 	
 	
 }

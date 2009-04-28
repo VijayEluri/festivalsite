@@ -48,5 +48,11 @@ public class PageVersion implements Serializable {
 		this.id = id;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer("PV:");
+		sb.append(id).append(":").append(pageName).append(":").append(createdAt).append(":").append(content);
+		return sb.toString();
+	}
 	
 }
