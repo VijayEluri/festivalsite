@@ -1,8 +1,8 @@
 package com.appspot.codsallarts.client;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.appspot.codsallarts.client.images.FestivalIconBundle;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
@@ -27,7 +27,7 @@ public class Festival implements EntryPoint {
 
 	private Application app = new Application();
 	
-	
+	FestivalIconBundle icons = (FestivalIconBundle)GWT.create(FestivalIconBundle.class);
 	private Anchor signInLink = new Anchor("Admin login");
 	private Anchor signOutLink = new Anchor("Sign Out");
 

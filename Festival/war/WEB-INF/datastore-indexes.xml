@@ -1,6 +1,9 @@
-<datastore-indexes xmlns="http://appengine.google.com/ns/datastore-indexes/1.0" autoGenerate="false">
-  <datastore-index kind="PageVersionPersistable" ancestor="false">
-    <property name="createdAt" direction="desc"/>
-    <property name="pageName" direction="asc"/>
-  </datastore-index>
+<datastore-indexes xmlns="http://appengine.google.com/ns/datastore-indexes/1.0"
+autoGenerate="false">
+
+    <datastore-index kind="PageVersionPersistable" ancestor="false">
+        <property name="pageName" direction="asc"/>
+        <property name="createdAt" direction="desc"/>
+    </datastore-index>
+
 </datastore-indexes>

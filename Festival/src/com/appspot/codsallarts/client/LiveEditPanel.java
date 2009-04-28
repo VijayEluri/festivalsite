@@ -1,5 +1,6 @@
 package com.appspot.codsallarts.client;
 
+import com.appspot.codsallarts.client.images.FestivalIconBundle;
 import com.appspot.codsallarts.client.DoubleClickHtml.SpecialClickHandler;
 import com.appspot.codsallarts.client.texteditor.RichTextToolbar;
 import com.appspot.codsallarts.client.texteditor.RichTextToolbar.EditCompleteHandler;
@@ -9,6 +10,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -19,6 +21,8 @@ public class LiveEditPanel extends Composite {
 	String name;
 	PageServiceAsync pageService;
 	PageVersion pageVersion = null;
+	FestivalIconBundle icons = (FestivalIconBundle)GWT.create(FestivalIconBundle.class);
+	
 	Widget editor;
 	private RichTextArea area;
 	private RichTextToolbar toolbar;
@@ -31,11 +35,16 @@ public class LiveEditPanel extends Composite {
 		//panel.setHeight("1em");
 		//panel.setWidth("100%");
 		initWidget(panel);
+		setLoading();
 		pageService = GWT.create(PageService.class);		
 		pageService.getLatestPage(name, dataCallback);
 		html.setClickHandler(htmlClickedHandler);
 		html.setSize("100%", "3 em");
 		
+	}
+
+	private void setLoading() {
+		this.setContent(new Image("images/loading.gif"));
 	}
 	
 
