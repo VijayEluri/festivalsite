@@ -2,6 +2,7 @@ package com.appspot.codsallarts.client;
 
 import com.appspot.codsallarts.client.images.FestivalIconBundle;
 import com.appspot.codsallarts.client.DoubleClickHtml.SpecialClickHandler;
+import com.appspot.codsallarts.client.MarkdownEditor.MarkdownHandler;
 import com.appspot.codsallarts.client.texteditor.RichTextToolbar;
 import com.appspot.codsallarts.client.texteditor.RichTextToolbar.EditCompleteHandler;
 import com.google.gwt.core.client.GWT;
@@ -24,11 +25,9 @@ public class LiveEditPanel extends Composite {
 	FestivalIconBundle icons = (FestivalIconBundle)GWT.create(FestivalIconBundle.class);
 	
 	Widget editor;
-	private RichTextArea area;
-	private RichTextToolbar toolbar;
-	boolean editMode = false;
 	private DoubleClickHtml html = new DoubleClickHtml("&nbsp;");
 	PageResults dataCallback = new PageResults();
+	private MarkdownEditor markdownEditor;
 	
 	public LiveEditPanel(String name) {
 		this.name = name;	
@@ -79,18 +78,32 @@ public class LiveEditPanel extends Composite {
 		
 	};
 	
-	private RichTextToolbar.EditCompleteHandler editCompleteHandler = new EditCompleteHandler(){
+	private MarkdownEditor.MarkdownHandler markdownHandler = new MarkdownHandler(){
 
 		public void cancel() {
 			showHTML();
+			markdownEditor.removeFromParent();
 		}
 
-		public void save() {
+
+		public void preview(String markdown) {
+
 			PageVersion newPageVersion = new PageVersion();
 			newPageVersion.setPageName(name);
-			newPageVersion.setContent(area.getHTML());
-			LiveEditPanel.this.setContent(new HTML("Loading"));
-			pageService.store(newPageVersion, dataCallback);
+			newPageVersion.setContent(markdown);
+			LiveEditPanel.this.setLoading();
+			dataCallback.onSuccess(newPageVersion);
+			
+		}
+
+		public void save(String markdown) {
+				PageVersion newPageVersion = new PageVersion();
+				newPageVersion.setPageName(name);
+				newPageVersion.setContent(markdown);
+				LiveEditPanel.this.setLoading();
+				
+				pageService.store(newPageVersion, dataCallback);
+				markdownEditor.removeFromParent();
 		}
 		
 	};
@@ -100,44 +113,45 @@ public class LiveEditPanel extends Composite {
 	}
 
 	protected void showEditor() {
-		if (! editMode){
-			
-			getEditorWidget();
-			if (pageVersion != null){
-				area.setHTML(pageVersion.getContent());
-			}
-			setContent(editor);
-			editMode = true;
+
+		if (pageVersion != null){
+			markdownEditor = new MarkdownEditor(markdownHandler, pageVersion.getContent());			
+		} else {
+			markdownEditor = new MarkdownEditor(markdownHandler, "");
 		}
+		
+		
+		markdownEditor.setAnimationEnabled(true);
+		markdownEditor.show();
+	
 	}
 
 	private void showHTML(){
 		if (pageVersion != null){
-			html.setHTML(pageVersion.getContent());
+			html.setHTML(MarkdownConverter.convertText(pageVersion.getContent()));
 			setContent(html);
-			editMode = false;
 		}
 	}
 	
-	private Widget getEditorWidget(){
-		if (editor == null){
-			// Create the text area and toolbar
-			area = new RichTextArea();
-			area.setSize("100%", "100%");
-			toolbar = new RichTextToolbar(area, editCompleteHandler);
-			toolbar.setWidth("100%");
-
-			// Add the components to a panel
-			Grid grid = new Grid(2, 1);
-			grid.setStyleName("cw-RichText");
-			grid.setWidget(0, 0, toolbar);
-			grid.setWidget(1, 0, area);
-			editor = grid;
-		} 
-
-		return editor;
-		
-	}
+//	private Widget getEditorWidget(){
+//		if (editor == null){
+//			// Create the text area and toolbar
+//			area = new RichTextArea();
+//			area.setSize("100%", "100%");
+//			toolbar = new RichTextToolbar(area, editCompleteHandler);
+//			toolbar.setWidth("100%");
+//
+//			// Add the components to a panel
+//			Grid grid = new Grid(2, 1);
+//			grid.setStyleName("cw-RichText");
+//			grid.setWidget(0, 0, toolbar);
+//			grid.setWidget(1, 0, area);
+//			editor = grid;
+//		} 
+//
+//		return editor;
+//		
+//	}
 
 	
 	

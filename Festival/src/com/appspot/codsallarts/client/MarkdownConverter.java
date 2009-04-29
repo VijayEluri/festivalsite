@@ -2,20 +2,21 @@ package com.appspot.codsallarts.client;
 
 public class MarkdownConverter {
 	
-	Object converterOb;
+	static Object converterOb;
 	
-	public MarkdownConverter(){
+	static {
 		converterOb = makeConverter();
 	}
+	
 	static private native Object makeConverter() /*-{
 	    return new $wnd.Attacklab.showdown.converter();
 	  }-*/;
 
-	public String convertText(String md){
+	public static String convertText(String md){
 		return convertNative(converterOb, md);
 	}
 	
-	private native String convertNative(Object converter, String md) /*-{
+	private static native String convertNative(Object converter, String md) /*-{
 		
 	  return converter.makeHtml(md);
 	  }-*/;
