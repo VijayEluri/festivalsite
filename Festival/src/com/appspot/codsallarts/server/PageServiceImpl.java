@@ -90,10 +90,6 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 		results = (List<PageVersionPersistable>) q.execute(name);
 		results.size();
 		
-		} finally {
-			pm.close();
-		}
-		
 		if (results == null || results.size() == 0){
 			PageVersion page = new PageVersion();
 			page.setPageName(name);
@@ -104,7 +100,12 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 			
 			return makeClientVersion(persisted);
 		}
-	}
+
+		
+		} finally {
+			pm.close();
+		}
+}
 
 
 	private PageVersion makeClientVersion(PageVersionPersistable persisted) {
