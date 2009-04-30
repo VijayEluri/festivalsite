@@ -118,6 +118,8 @@ public class Application extends Composite implements ResizeHandler,
    */
   private Tree mainMenu;
 
+  private SimplePanel navigationPanel;
+  
   /**
    * The last known width of the window.
    */
@@ -176,9 +178,11 @@ public class Application extends Composite implements ResizeHandler,
     formatter.setStyleName(1, 0, DEFAULT_STYLE_NAME + "-content-wrapper");
     setContent(null);
 
-    createMainMenu();
-    bottomPanel.add(mainMenu);
-
+    //createMainMenu();
+    //bottomPanel.add(mainMenu);
+    navigationPanel = new SimplePanel();
+    navigationPanel.addStyleName(DEFAULT_STYLE_NAME + "-nav");
+    bottomPanel.add(navigationPanel);
     // Add a window resize handler
     Window.addResizeHandler(this);
   }
@@ -257,6 +261,10 @@ public class Application extends Composite implements ResizeHandler,
     }
   }
 
+  public void setNavBar(Widget w){
+	  navigationPanel.add(w);
+  }
+  
   /**
    * Set the title of the content area.
    * 
@@ -298,10 +306,10 @@ public class Application extends Composite implements ResizeHandler,
   }
 
   protected void onWindowResizedImpl(int width) {
-    int menuWidth = mainMenu.getOffsetWidth();
-    int contentWidth = Math.max(width - menuWidth - 30, 1);
+    int navWidth = navigationPanel.getOffsetWidth();
+    int contentWidth = Math.max(width - navWidth - 30, 1);
     int contentWidthInner = Math.max(contentWidth - 10, 1);
-    bottomPanel.setCellWidth(mainMenu, menuWidth + "px");
+    bottomPanel.setCellWidth(navigationPanel, navWidth + "px");
     bottomPanel.setCellWidth(contentDecorator, contentWidth + "px");
     contentLayout.getCellFormatter().setWidth(0, 0, contentWidthInner + "px");
     contentLayout.getCellFormatter().setWidth(1, 0, contentWidthInner + "px");

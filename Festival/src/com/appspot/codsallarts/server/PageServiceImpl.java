@@ -27,28 +27,29 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	public PageVersion store(PageVersion page) throws NotLoggedInException {
 		
 		LoginServiceImpl.checkLoggedIn();
-		
-	    PersistenceManager pm = getPersistenceManager();
-	    PageVersionPersistable storable = new PageVersionPersistable();
-	    storable.setContent(page.getContent());
-	    storable.setPageName(page.getPageName());
-	    storable.setCreatedAt(new Date());
-	    if (page.getId() != 0){
-	    	storable.setId(page.getId());
-	    }
-	    try {
-	      pm.makePersistent(storable);
-	    } finally {
-	      pm.close();
-	    }
+		PersistenceManager pm = getPersistenceManager();
+		try {
+			PageVersionPersistable storable = new PageVersionPersistable();
+			storable.setContent(page.getContent());
+			storable.setPageName(page.getPageName());
+			storable.setCreatedAt(new Date());
+			if (page.getId() != 0){
+				storable.setId(page.getId());
+			}
 
-		PageVersion newPage = new PageVersion();
-		newPage.setPageName(storable.getPageName());
-		newPage.setContent(storable.getContent());
-		newPage.setCreatedAt(storable.getCreatedAt());
-		newPage.setId(storable.getId());
-		LOG.warning("Created PageVersion with ID " + newPage.getId());
-		return newPage;
+			pm.makePersistent(storable);
+
+			PageVersion newPage = new PageVersion();
+			newPage.setPageName(storable.getPageName());
+			newPage.setContent(storable.getContent());
+			newPage.setCreatedAt(storable.getCreatedAt());
+			newPage.setId(storable.getId());
+			LOG.warning("Created PageVersion with ID " + newPage.getId());
+			return newPage;
+		} finally {
+			pm.close();
+		}
+
 	}
 	
 	
@@ -88,9 +89,8 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 		q.setRange(0,1);
 
 		results = (List<PageVersionPersistable>) q.execute(name);
-		results.size();
 		
-		if (results == null || results.size() == 0){
+		if (results == null || results.isEmpty()){
 			PageVersion page = new PageVersion();
 			page.setPageName(name);
 			page.setContent("Double-click to start");

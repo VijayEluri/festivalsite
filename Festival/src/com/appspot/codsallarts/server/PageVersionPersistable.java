@@ -10,7 +10,7 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class PageVersionPersistable  {
 
-	private static final long serialVersionUID = 2L;
+	private static final long serialVersionUID = 1L;
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -23,10 +23,7 @@ public class PageVersionPersistable  {
 	@Persistent
 	private Date createdAt;
 	
-	public PageVersionPersistable(){
-		
-		
-	}
+
 
 	public String getContent() {
 		return content;

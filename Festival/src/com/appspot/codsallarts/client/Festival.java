@@ -8,6 +8,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.DecoratedPopupPanel;
+import com.google.gwt.user.client.ui.DecoratorPanel;
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -53,14 +56,33 @@ public class Festival implements EntryPoint {
 	}
 	
 	private void loadApp(){
-		RootPanel.get().add(app);
 		
 		app.setLinks(getLinksBar());
+		app.setNavBar(getNavBar());
 		
 		setTitle();
 		app.setContent(new LiveEditPanel("welcome"));
 		app.setContentTitle(new Hyperlink("Home", "home"));
-				
+		RootPanel.get().add(app);
+	}
+
+	private Widget getNavBar() {
+		if (false){
+			return new HTML ("nav");
+		}
+		LiveEditPanel NewsMiniPanel = new LiveEditPanel("mininews");
+		DecoratorPanel newsWrapper = new DecoratorPanel();
+		newsWrapper.add(NewsMiniPanel);
+		
+		LiveEditPanel sponsorMiniPanel = new LiveEditPanel("sponsors");
+		DecoratorPanel sponsorWrapper = new DecoratorPanel();
+		sponsorWrapper.add(sponsorMiniPanel);
+		
+		Grid rightNav = new Grid(2,1);
+		rightNav.setWidget(0,0,newsWrapper);
+		rightNav.setWidget(1,0,sponsorWrapper);
+		return rightNav;
+	
 	}
 
 	private List<Widget> getLinksBar() {
