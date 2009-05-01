@@ -151,6 +151,7 @@ public class Application extends Composite implements ResizeHandler,
     
     // Setup the content layout
     contentLayout = new Grid(2, 1);
+    contentLayout.setStyleName("Application-content-grid");
     contentLayout.setCellPadding(0);
     contentLayout.setCellSpacing(0);
     contentDecorator = new DecoratorPanel();
@@ -306,6 +307,8 @@ public class Application extends Composite implements ResizeHandler,
   }
 
   protected void onWindowResizedImpl(int width) {
+	  if (true)
+	  return;
     int navWidth = navigationPanel.getOffsetWidth();
     int contentWidth = Math.max(width - navWidth - 30, 1);
     int contentWidthInner = Math.max(contentWidth - 10, 1);
@@ -318,7 +321,8 @@ public class Application extends Composite implements ResizeHandler,
   /**
    * Create the main menu.
    */
-  private void createMainMenu() {
+  @SuppressWarnings("unused")
+private void createMainMenu() {
     // Setup the main menu
     ApplicationImages treeImages = GWT.create(ApplicationImages.class);
     mainMenu = new Tree(treeImages);
