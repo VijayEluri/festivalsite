@@ -37,4 +37,16 @@
 		<nature>com.google.gwt.eclipse.core.gwtNature</nature>
 		<nature>com.google.gdt.eclipse.core.webAppNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>datanucleus-appengine-1.0.0.final-src</name>
+			<type>2</type>
+			<location>C:/Documents and Settings/james.kingston/googleappengine-read-only/java/src/orm/datanucleus-appengine-1.0.0.final-src</location>
+		</link>
+		<link>
+			<name>src-1</name>
+			<type>2</type>
+			<location>C:/Documents and Settings/james.kingston/googleappengine-read-only/java/src/orm/datanucleus-appengine-1.0.0.final-src</location>
+		</link>
+	</linkedResources>
 </projectDescription>
