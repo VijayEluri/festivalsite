@@ -1,0 +1,34 @@
+body {
+	background-image: url(images/greenbg.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	margin: 0px;
+	background-color: #3ac034;
+}
+
+div#banner {
+    background-image: url(images/greentop.png);
+    height: 160px;
+    
+}
+
+div#body, div#footer, div#menu {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+div#bottom {
+    background-image: url(images/greenbottom.png);
+    height: 36px;    
+}
+
+#page-panel {
+    background-image: url(images/greenmid.png);
+    width: 775px;
+    margin-left: auto;
+    margin-right: auto;
+	
+}
+div#post-banner ,div#post-menu {
+    clear: both;
+}
