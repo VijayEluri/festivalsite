@@ -8,7 +8,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.DecoratedPopupPanel;
 import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
@@ -70,17 +69,24 @@ public class Festival implements EntryPoint {
 		if (false){
 			return new HTML ("nav");
 		}
-		LiveEditPanel NewsMiniPanel = new LiveEditPanel("mininews");
+		LiveEditPanel newsMiniPanel = new LiveEditPanel("mininews");
+		newsMiniPanel.setStyleName("navbar-news-content");
 		DecoratorPanel newsWrapper = new DecoratorPanel();
-		newsWrapper.add(NewsMiniPanel);
+		newsWrapper.addStyleName("navbar-news-decorator");
+		newsWrapper.add(newsMiniPanel);
 		
 		LiveEditPanel sponsorMiniPanel = new LiveEditPanel("sponsors");
+		sponsorMiniPanel.setStyleName("navbar-sponsor-content");
 		DecoratorPanel sponsorWrapper = new DecoratorPanel();
+		sponsorWrapper.addStyleName("navbar-sponsor-decorator");
 		sponsorWrapper.add(sponsorMiniPanel);
 		
 		Grid rightNav = new Grid(2,1);
+		rightNav.setStyleName("navbar");
 		rightNav.setWidget(0,0,newsWrapper);
+		rightNav.getCellFormatter().setStyleName(0,0,"navbar-news-cell");
 		rightNav.setWidget(1,0,sponsorWrapper);
+		rightNav.getCellFormatter().setStyleName(1,0,"navbar-sponsor-cell");
 		return rightNav;
 	
 	}

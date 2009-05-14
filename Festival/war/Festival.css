@@ -75,6 +75,11 @@
   margin-left: 8px;
   
 }
+
+.Application-content-grid {
+	width: 600px;
+}
+
 .Application-content-title {
   padding: 4px 0px 3px 6px;
   text-align: left;
@@ -94,7 +99,10 @@
 }
 .Application-content-wrapper {
   text-align: left;
+  padding: 10px 10px 10px 20px;
+  width: 100%;
 }
+
 .sc-ContentWidget {
   padding: 10px 20px;
 }
@@ -108,6 +116,7 @@
   border-bottom: 1px solid #7aa5d6;
   margin-bottom: 15px;
 }
+
 .sc-ContentWidget pre {
   border: 1px solid #888;
   background: #eeeeee;
@@ -169,3 +178,52 @@
   font-weight: bold;
   font-size: 1.4em;
 }
+
+.navbar {
+	height: 100%;
+	width: 18em;
+	padding: 0;
+	margin: 0;
+}
+/*
+.navbar-news-cell, .navbar-sponsor-cell {
+	width: 100%;
+}
+
+.navbar-news-decorator, .navbar-sponsor-decorator {
+	width: 100%;
+}
+*/
+
+.navbar-news-content, .navbar-sponsor-content {
+	width: 15em;
+	padding: 5px;
+}
+
+.navbar-news-content h2, .navbar-sponsor-content h2 {
+	border-bottom: #7c8c9b solid 1px;
+	font-size: 1.3em;
+	padding: 0;
+	margin: 2px;
+	
+}
+
+.navbar-news-content h3,.navbar-sponsor-content h3 {
+	background-color: 	#eee;
+	font-size: 1.1em;
+	padding: 2px;
+	margin: 1px;
+	}
+
+.navbar-news-content p {
+	padding: 2px;
+	margin: 1px;
+}
+
+.navbar-sponsor-content p {
+	padding: 1px;
+	margin: 0;
+	text-align: center;
+	font-size: 0.8em;
+}
+

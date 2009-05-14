@@ -24,7 +24,7 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	private static final long serialVersionUID = 1L;
 
 
-	public PageVersion store(PageVersion page) throws NotLoggedInException {
+	synchronized public PageVersion store(PageVersion page) throws NotLoggedInException {
 		
 		LoginServiceImpl.checkLoggedIn();
 		PersistenceManager pm = getPersistenceManager();
@@ -54,7 +54,7 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	
 	
 	@SuppressWarnings("unchecked")
-	public PageVersion getPage(long id) throws PageNotFoundException, NotLoggedInException {
+	synchronized public PageVersion getPage(long id) throws PageNotFoundException, NotLoggedInException {
 		LoginServiceImpl.checkLoggedIn();
 		PersistenceManager pm = getPersistenceManager();
 		List <PageVersionPersistable> results = null;
@@ -75,7 +75,7 @@ public class PageServiceImpl extends RemoteServiceServlet implements PageService
 	}
 
 	@SuppressWarnings("unchecked")
-	public PageVersion getLatestPage(String name) throws NotLoggedInException {
+	synchronized public PageVersion getLatestPage(String name) throws NotLoggedInException {
 		PersistenceManager pm = getPersistenceManager();
 		List<PageVersionPersistable> results = null;
 		try {
