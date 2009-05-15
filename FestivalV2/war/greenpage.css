@@ -16,7 +16,7 @@ text-align:left;
 }
 
 div#banner {
-	background-image: url(images/greentop.png);
+	background-image: url(images/greentop-flowery.png);
 	height: 216px;
 }
 
@@ -46,13 +46,21 @@ div#bottom {
 	height: 36px;
 }
 
-div#body,div#footer {
-	background-image: url(images/greenmid.png);
-}
 div#body {
 	background-image: url(images/greenmid.png);
 	height: 400px;
+	padding-top: 10px;
 }
+
+div#footer {
+	color: white;
+	
+}	
+
+div#footer img {
+	float: right;
+	margin: 2px;
+}	
 
 div#post-banner,div#post-menu {
 	clear: both;
