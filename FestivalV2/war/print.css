@@ -12,3 +12,8 @@ div#post-banner,div#post-menu {
 div#footer {
 	border-top:solid 2px black;
 }
+
+div#footer img {
+	float: right;
+	margin: 2px;
+}	
