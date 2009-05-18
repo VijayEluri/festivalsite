@@ -1,23 +1,27 @@
+div#banner {
+	background-image: url(images/greentop-flowery.jpg);
+	height: 216px;
+}
+
 body {
 	background-image: url(images/greenbg.png);
 	background-repeat: repeat-x;
 	background-position: top;
 	margin: 0px;
 	background-color: #3ac034;
-	font-family: "Helvetica", "Century Gothic", "MS Sans Serif", Geneva,
+	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
 		sans-serif;
 	text-align:center;
 }
 
-div#page-panel {
-	width: 892px;
-margin: 0 auto;
-text-align:left;
+img {
+	margin: 5px;
 }
 
-div#banner {
-	background-image: url(images/greentop-flowery.png);
-	height: 216px;
+div#page-panel {
+	width: 892px;
+    margin: 0 auto;
+    text-align:left;
 }
 
 div#menu {
@@ -38,7 +42,7 @@ div#banner * {
 
 div#body,div#footer {
 	padding-left: 25px;
-	padding-right: 20px;
+	padding-right: 25px;
 }
 
 div#bottom {
@@ -48,18 +52,28 @@ div#bottom {
 
 div#body {
 	background-image: url(images/greenmid.png);
-	height: 400px;
+	background-repeat: repeat-y;
 	padding-top: 10px;
+  min-height:400px;
+  height:auto !important;
+  height:400px;
 }
 
 div#footer {
+	padding-bottom: 10px;
 	color: white;
+	font: 14px Helvetica, Tahoma, Arial;
 	
 }	
 
-div#footer img {
+div#footer img.logo {
 	float: right;
 	margin: 2px;
+}	
+
+ div.right-bar {
+	float: right;
+	
 }	
 
 div#post-banner,div#post-menu {
@@ -70,7 +84,7 @@ div#post-banner,div#post-menu {
 }
 
 h1 {
-	font-family: "Helvetica", "Century Gothic", "MS Sans Serif", Geneva,
+	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
 		sans-serif;
 }
 
@@ -81,33 +95,53 @@ h2,h3,h4,h5,h6 {
 h1,h2,h3,h4,h5,h6 {
 	color: #429466;
 	font-weight: normal;
+	margin: 5px;
 }
 
 h1 {
-	font-size: 2.0em;
+	font-size: 1.4em;
 }
 
-h2 {
-	margin: 0;
-	font-size: 1.8em;
-	border-bottom: 1px solid #7BBE20;
-	padding-bottom: 10px;
+h3.music {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #e49148;
+	color: white;
 }
 
-h3 {
-	font-size: 1.6em;
+h3.photo {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #9148e4;
+	color: white;
 }
 
-h4 {
-	font-size: 1.2em;
+h3.dance {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #48e491;
+	color: black;
 }
 
-h5 {
-	font-size: 1.2em;
+h3.theatre {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #e4484d;
+	color: white;
 }
 
-h6 {
-	font-size: 1.0em;
+h3.art {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #48e4df;
+	color: black;
+}
+
+h3.spoken {
+	padding: 5px 10px;
+	width: 810px;
+	background-color: #E4DF48;
+	color: black;
 }
 
 p,ol,ul,li {
@@ -128,6 +162,11 @@ p,ol,ul,li {
 	
 }
 
+#jsddm li.parent {
+	list-style-image: url(images/downarrow.png);
+	list-style-position: inside;
+}
+
 /* #3ac034 = lt green */
 /* 09b000 = saturated green */
 #jsddm li a {
@@ -141,6 +180,13 @@ p,ol,ul,li {
 	white-space: nowrap
 }
 
+#jsddm li a.last {
+	border-right: none;
+}
+	
+#jsddm li a.wide {
+	width: 85px;
+}
 #jsddm li a:hover {
 	background: #3ac034
 }
