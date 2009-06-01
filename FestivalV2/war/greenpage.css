@@ -1,6 +1,6 @@
 div#banner {
-	background-image: url(images/greentop-flowery.jpg);
-	height: 216px;
+	background-image: url(images/banner.jpg);
+	height: 180px;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
 	background-color: #3ac034;
 	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
 		sans-serif;
+	font-size: 80%;
 	text-align:center;
 }
 
@@ -86,6 +87,7 @@ div#post-banner,div#post-menu {
 h1 {
 	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
 		sans-serif;
+	font-variant: small-caps;
 }
 
 h2,h3,h4,h5,h6 {
@@ -99,7 +101,22 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
+	font-size: 1.5em;
+}
+h2 {
 	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.3em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.1em;
+}
+h6 {
+	font-size: 1.0em;
 }
 
 h3.music {

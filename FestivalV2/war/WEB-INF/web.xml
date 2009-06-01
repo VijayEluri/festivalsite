@@ -3,9 +3,45 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd">
 
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+<web-app>
+	<filter>
+		<filter-name>StripesFilter</filter-name>
+		<display-name>Stripes Filter</display-name>
+		<filter-class>net.sourceforge.stripes.controller.StripesFilter</filter-class>
+		<init-param>
+			<param-name>ActionResolver.Packages</param-name>
+			<param-value>my.action.bean.pkg</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>MultipartWrapper.Class</param-name>
+	    	<param-value>festivalv2.EmptyWrapper</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>StripesFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>StripesFilter</filter-name>
+		<servlet-name>StripesDispatcher</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>StripesDispatcher</servlet-name>
+		<servlet-class>net.sourceforge.stripes.controller.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StripesDispatcher</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
-		<welcome-file>ccaf.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
