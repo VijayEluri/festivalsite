@@ -1,59 +1,18 @@
 <%@page contentType="text/html;charset=ISO-8859-1" language="java"%>
-<%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes.tld" %>
-
-<stripes:layout-definition>
-
+<%@include file="/WEB-INF/jsp/taglibs.jsp" %>
+<s:layout-definition>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
 <title> Codsall Community Arts Festival </title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js" ></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js" ></script>
+<script src="js/default.js" ></script>
 <link rel="stylesheet" href="greenpage.css" type="text/css"	media="screen" />
 <link rel="stylesheet" href="print.css" type="text/css" media="print" />
-<script type="text/javascript">
-var timeout    = 500;
-var closetimer = 0;
-var ddmenuitem = 0;
-
-function jsddm_open()
-{  jsddm_canceltimer();
-   jsddm_close();
-   ddmenuitem = $(this).find('ul').css('visibility', 'visible');}
-
-function jsddm_close()
-{  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
-
-function jsddm_timer()
-{  closetimer = window.setTimeout(jsddm_close, timeout);}
-
-function jsddm_canceltimer()
-{  if(closetimer)
-   {  window.clearTimeout(closetimer);
-      closetimer = null;}}
-
-$(document).ready(function()
-{  $('#jsddm > li').bind('mouseover', jsddm_open)
-   $('#jsddm > li').bind('mouseout',  jsddm_timer)});
-
-document.onclick = jsddm_close;
-
-function swap_banner_f(){
-	var banner_index = 0;
-	var banner_urls = new Array('url(images/banner.jpg)','url(images/curtains.jpg)');
-	return function(e){
-		banner_index = banner_index + 1;
-		if (banner_index >= banner_urls.length){
-			banner_index = 0;
-		}
-		$('#banner').css('background-image', banner_urls[banner_index]);
-	};
-}
-swap_banner_onclick = swap_banner_f();
-$(document).ready(function(){
-	$('#banner').bind("mouseenter",swap_banner_onclick);
-
-
-	 });
-
-</script>
+<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="facebox/facebox.js" type="text/javascript"></script> 
 </head>
 <body>
 <div id="page-panel">
@@ -61,10 +20,10 @@ $(document).ready(function(){
 		class="header-logo" align="left" />
 		<h1>Codsall Community Arts Festival</h1>
 	</div>
-	<div id="post-banner" />
-		<div id="menu">
+	<div id="post-banner"></div>
+	<div id="menu">
 		<ul id="jsddm">
-			<li><a href="index.jsp">Home</a>
+			<li><a href="index.jsp">Home</a></li>
 				<li class="parent"><a href="#">About Us</a>
 				<ul>
 					<li><a href="committee.jsp">Committee</a></li>
@@ -87,10 +46,10 @@ $(document).ready(function(){
 		
 		</ul>
 	</div>
-    <div id="post-menu" />
+    <div id="post-menu" ></div>
 	<div id="body">
-         <stripes:layout-component name="contents"/>
-	</div>
+         <s:layout-component name="contents"/>
+    </div>
 	
 	
 	<div id="bottom"></div>
@@ -99,9 +58,21 @@ $(document).ready(function(){
 	<img src="images/scclogo-sm.gif" class="logo" alt="Staffs Council"/>
 	&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
 	<br />  Registered Charity #1127064
-	<br />  Admin Login
+	<br />  
+	
+	<c:choose>
+        <c:when test='${actionBean.login.loggedIn}'>
+            <a href="${actionBean.login.logoutUrl}">Admin logout</a>            
+        </c:when>
+        <c:otherwise>
+            <a href="${actionBean.login.loginUrl}">Admin login</a>
+        </c:otherwise>
+    </c:choose>
+
+	
+	
 	</div>
 </div>
 </body>
-</stripes:layout-definition>
-
+</html>
+</s:layout-definition>

@@ -11,10 +11,42 @@ package festivalv2.action;
 
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
+import festivalv2.LoginInfo;
+import festivalv2.services.LoginServiceImpl;
 
-public abstract class BaseActionBean implements ActionBean {/* (1) */
+public abstract class BaseActionBean implements ActionBean {
+	
+	private String originalUrl;
     private ActionBeanContext ctx;
+    private LoginInfo login;
     public ActionBeanContext getContext() { return ctx; }
-    public void setContext(ActionBeanContext ctx) { this.ctx = ctx; }
+    public void setContext(ActionBeanContext ctx) { 
+    	this.ctx = ctx; 
+    	setOriginalUrlFromContext();
+    }
+	public LoginInfo getLogin() {
+		if (login == null){
+			
+			login = new LoginServiceImpl().login(getOriginalUrl());	
+		}
+		
+		return login;
+	}
+	public void setLogin(LoginInfo login) {
+		this.login = login;
+	}
+	public String getOriginalUrl() {
+		return originalUrl;
+	}
+	public void setOriginalUrl(String callingUrl) {
+		this.originalUrl = callingUrl;
+	}
+	
+	public void setOriginalUrlFromContext() {
+		originalUrl = (String)ctx.getRequest().getAttribute("javax.servlet.forward.request_uri");
+		if (originalUrl == null){
+			originalUrl = ctx.getRequest().getRequestURI();
+		}
+	}
 }
 

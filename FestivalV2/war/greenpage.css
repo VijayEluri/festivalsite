@@ -229,3 +229,10 @@ p,ol,ul,li {
 #jsddm li ul li a:hover {
 	background: #09b000
 }
+
+
+#editable_content_link {
+	display: none;
+}
+
+
