@@ -9,9 +9,9 @@ body {
 	background-position: top;
 	margin: 0px;
 	background-color: #3ac034;
-	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
+	font-family: "Times New Roman", "Helvetica", "Century Gothic", "MS Sans Serif", Geneva,
 		sans-serif;
-	font-size: 80%;
+	font-size: 105%;
 	text-align:center;
 }
 
@@ -77,7 +77,7 @@ div#footer img.logo {
 	
 }	
 
-div#post-banner,div#post-menu {
+div#post-banner,div#post-menu,div#post-body {
 	clear: both;
 	margin: 0;
 	height: 0;
@@ -101,10 +101,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 h2 {
-	font-size: 1.4em;
+	font-size: 1.5em;
 }
 h3 {
 	font-size: 1.3em;
@@ -232,7 +232,21 @@ p,ol,ul,li {
 
 
 #editable_content_link {
-	display: none;
+	background-color: #ccc;
 }
 
+#editable_content_link a {
+	color: #333;
+}
 
+form.page_editor textarea {
+	width: 99%;
+	height: 400px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+		
+}	
+ p {
+ margin-bottom: 0;
+ }

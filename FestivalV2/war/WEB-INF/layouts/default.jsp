@@ -1,8 +1,6 @@
 <%@page contentType="text/html;charset=ISO-8859-1" language="java"%>
 <%@include file="/WEB-INF/jsp/taglibs.jsp" %>
 <s:layout-definition>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 <title> Codsall Community Arts Festival </title>
@@ -20,7 +18,7 @@
 		class="header-logo" align="left" />
 		<h1>Codsall Community Arts Festival</h1>
 	</div>
-	<div id="post-banner"></div>
+	<div id="post-banner" />
 	<div id="menu">
 		<ul id="jsddm">
 			<li><a href="index.jsp">Home</a></li>
@@ -46,7 +44,7 @@
 		
 		</ul>
 	</div>
-    <div id="post-menu" ></div>
+    <div id="post-menu"/>
 	<div id="body">
          <s:layout-component name="contents"/>
     </div>
@@ -68,6 +66,8 @@
             <a href="${actionBean.login.loginUrl}">Admin login</a>
         </c:otherwise>
     </c:choose>
+	<br />  
+         <s:layout-component name="extra-footer"/>
 
 	
 	

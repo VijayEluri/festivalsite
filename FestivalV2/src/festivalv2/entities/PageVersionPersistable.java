@@ -7,6 +7,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Text;
+
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class PageVersionPersistable  {
 
@@ -17,7 +19,7 @@ public class PageVersionPersistable  {
 	private Long id;
 	
 	@Persistent
-	private String content;
+	private Text content;
 	@Persistent
 	private String pageName;
 	@Persistent
@@ -26,11 +28,11 @@ public class PageVersionPersistable  {
 
 
 	public String getContent() {
-		return content;
+		return content.getValue();
 	}
 
 	public void setContent(String content) {
-		this.content = content;
+		this.content = new Text(content);
 	}
 
 	public String getPageName() {
@@ -50,6 +52,9 @@ public class PageVersionPersistable  {
 	}
 
 	public long getId() {
+		if (id == null){
+			return 0;
+		}
 		return id;
 	}
 
