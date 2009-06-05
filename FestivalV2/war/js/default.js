@@ -52,11 +52,13 @@ $(document).ready(function()
 		    $('#jsddm > li').bind('mouseover', jsddm_open);
 		    $('#jsddm > li').bind('mouseout',  jsddm_timer);
 		    $('#banner').bind("dblclick",swap_banner_onclick);
+
+		    /*
 		    $('#editable_content').bind("dblclick",
 		      function(e){
 			$.facebox($("#editable_content_link").get()[0].innerHTML);
 
-/*			$(this).children('div.rawcontent').dialog(
+			$(this).children('div.rawcontent').dialog(
 			  {resizable: false,
 			   dialogClass: 'editor',
 			  modal: true,
@@ -65,10 +67,11 @@ $(document).ready(function()
 			  buttons:{ "Close": function() { $(this).hide(); } },
 			  close: function(ev, ui) { $(this).hide();}
 			  });
-*/
-		      });
 
+		     });
+		     */
 		  }
+
 );
 
 
