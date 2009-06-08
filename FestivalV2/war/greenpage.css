@@ -1,5 +1,5 @@
 div#banner {
-	background-image: url(images/banner.jpg);
+	background-image: url(images/banner-yellow-bevel.jpg);
 	height: 180px;
 }
 
@@ -7,17 +7,19 @@ body {
 	background-image: url(images/greenbg.png);
 	background-repeat: repeat-x;
 	background-position: top;
-	margin: 0px;
 	background-color: #3ac034;
-	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
+	font-family: "Times New Roman", "Helvetica", "Century Gothic", "MS Sans Serif", Geneva,
 		sans-serif;
-	font-size: 80%;
 	text-align:center;
+	margin: 0px;
+	font-size: 13pt;
+	padding: 0px; 
 }
 
 img {
 	margin: 5px;
 }
+
 
 div#page-panel {
 	width: 892px;
@@ -29,6 +31,7 @@ div#menu {
 	background-image: url(images/menubg.png);
 	height: 32px;
 	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /*
@@ -77,7 +80,7 @@ div#footer img.logo {
 	
 }	
 
-div#post-banner,div#post-menu {
+div#post-banner,div#post-menu,div#post-body {
 	clear: both;
 	margin: 0;
 	height: 0;
@@ -97,17 +100,20 @@ h2,h3,h4,h5,h6 {
 h1,h2,h3,h4,h5,h6 {
 	color: #429466;
 	font-weight: normal;
-	margin: 5px;
+	margin: 5px 10px 5px 0px; 
+/*	margin: 5px;*/
 }
 
 h1 {
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 h2 {
-	font-size: 1.4em;
+	font-size: 1.5em;
+    padding: 3px 0 5px 0;
 }
 h3 {
 	font-size: 1.3em;
+	padding: 3px 0 5px 0;
 }
 h4 {
 	font-size: 1.2em;
@@ -119,43 +125,43 @@ h6 {
 	font-size: 1.0em;
 }
 
-h3.music {
-	padding: 5px 10px;
+h4.music {
+	padding: 3px 10px;
 	width: 810px;
 	background-color: #e49148;
 	color: white;
 }
 
-h3.photo {
-	padding: 5px 10px;
+h4.photo {
+	padding: 3px 10px;
 	width: 810px;
 	background-color: #9148e4;
 	color: white;
 }
 
-h3.dance {
-	padding: 5px 10px;
+h4.dance {
+	padding: 3px 10px;
 	width: 810px;
 	background-color: #48e491;
 	color: black;
 }
 
-h3.theatre {
-	padding: 5px 10px;
+h4.theatre {
+	padding: 3px 10px;
 	width: 810px;
 	background-color: #e4484d;
 	color: white;
 }
 
-h3.art {
-	padding: 5px 10px;
+h4.art {
+	padding: 3px 10px;
 	width: 810px;
-	background-color: #48e4df;
+	background-color: #99ffff;
 	color: black;
 }
 
-h3.spoken {
-	padding: 5px 10px;
+h4.spoken {
+	padding: 3px 10px;
 	width: 810px;
 	background-color: #E4DF48;
 	color: black;
@@ -163,6 +169,24 @@ h3.spoken {
 
 p,ol,ul,li {
 	font-size: 1.0em;
+}
+
+
+li {
+	list-style-type: circle;
+}
+
+table.two-column td {
+	vertical-align: top;
+}
+
+table.two-column {
+	
+    margin: 0 auto;
+}
+table.two-column td {
+	margin-left: 10px;
+	width: 30%;
 }
 
 #jsddm {
@@ -232,7 +256,54 @@ p,ol,ul,li {
 
 
 #editable_content_link {
-	display: none;
+	background-color: #ccc;
 }
 
+#editable_content_link a {
+	color: #333;
+}
+
+form.page_editor textarea {
+	width: 99%;
+	height: 400px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: sans-serif;
+	margin: 5px;		
+}
+
+table#newsflash {
+	width: 558px;
+	margin: 0;
+	
+}
+
+
+#newsflash td{
+	padding-left: 50px;
+	width: 558px;
+	background-image: url(images/flash-mid.jpg);
+	margin: 0;
+	padding-bottom: 0;
+}
+
+#newsflash td.first{
+	background-image: url(images/flash-top.jpg);
+	width: 558px;
+	height: 44px;
+	margin: 0;
+}
+
+#newsflash td.last{
+	background-image: url(images/flash-bottom.jpg);
+	width: 558px;
+	height: 33px;
+	margin: 0;
+	
+}
+
+p {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
 

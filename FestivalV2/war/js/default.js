@@ -33,7 +33,7 @@ document.onclick = jsddm_close;
 function swap_banner_f()
 {
   var banner_index = 0;
-  var banner_urls = new Array('url(images/banner.jpg)','url(images/curtains.jpg)');
+  var banner_urls = new Array('url(images/banner-yellow-bevel.jpg)','url(images/banner.jpg)','url(images/curtains.jpg)');
   return function(e)
   {
     banner_index = banner_index + 1;
@@ -52,24 +52,6 @@ $(document).ready(function()
 		    $('#jsddm > li').bind('mouseover', jsddm_open);
 		    $('#jsddm > li').bind('mouseout',  jsddm_timer);
 		    $('#banner').bind("dblclick",swap_banner_onclick);
-
-		    /*
-		    $('#editable_content').bind("dblclick",
-		      function(e){
-			$.facebox($("#editable_content_link").get()[0].innerHTML);
-
-			$(this).children('div.rawcontent').dialog(
-			  {resizable: false,
-			   dialogClass: 'editor',
-			  modal: true,
-			  width: 400,
-			  overlay: { backgroundColor: "#000", opacity: 1 },
-			  buttons:{ "Close": function() { $(this).hide(); } },
-			  close: function(ev, ui) { $(this).hide();}
-			  });
-
-		     });
-		     */
 		  }
 
 );
