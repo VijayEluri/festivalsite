@@ -1,24 +1,22 @@
 <%@page contentType="text/html;charset=ISO-8859-1" language="java"%>
 <%@include file="/WEB-INF/jsp/taglibs.jsp" %>
 <s:layout-definition>
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title> Codsall Community Arts Festival </title>
-<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js" ></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js" ></script>
+<script src="js/jquery-1.3.2.min.js" ></script>
 <script src="js/default.js" ></script>
-<link rel="stylesheet" href="greenpage.css" type="text/css"	media="screen" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
-<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
-<script src="facebox/facebox.js" type="text/javascript"></script> 
+<link rel="stylesheet" href="greenpage.css" type="text/css"	 />
+<!--  <link rel="stylesheet" href="print.css" type="text/css" media="print" /> -->
 </head>
 <body>
 <div id="page-panel">
-	<div id="banner"><img src="images/ccaf-small.png" alt="ccaf logo"
-		class="header-logo" align="left" />
+	<div id="banner"><img src="images/ccaf-small.png" alt="ccaf logo" class="header-logo" align="left" >
 		<h1>Codsall Community Arts Festival</h1>
 	</div>
-	<div id="post-banner" />
 	<div id="menu">
 		<ul id="jsddm">
 			<li><a href="index.jsp">Home</a></li>
@@ -35,6 +33,8 @@
 			<ul>
 				<li><a href="patrons.jsp">Patrons</a></li>
 				<li><a href="sponsors.jsp">Sponsors</a></li>
+				<li><a href="advertisers.jsp">Advertisers</a></li>
+
 			</ul>
 			</li>
 		
@@ -44,7 +44,6 @@
 		
 		</ul>
 	</div>
-    <div id="post-menu"/>
 	<div id="body">
          <s:layout-component name="contents"/>
     </div>
@@ -67,7 +66,7 @@
         </c:otherwise>
     </c:choose>
 	<br />  
-         <s:layout-component name="extra-footer"/>
+         <s:layout-component name="extra_footer"/>
 
 	
 	

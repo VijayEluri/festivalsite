@@ -7,7 +7,7 @@
         	${actionBean.html}
     </s:layout-component>
 
-    <s:layout-component name="extra-footer">
+    <s:layout-component name="extra_footer">
 
      	<c:if test="${actionBean.login.loggedIn}">
 	     		<s:link beanclass="festivalv2.action.EditPageActionBean" event="edit" >

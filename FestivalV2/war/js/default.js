@@ -33,7 +33,7 @@ document.onclick = jsddm_close;
 function swap_banner_f()
 {
   var banner_index = 0;
-  var banner_urls = new Array('url(images/banner.jpg)','url(images/curtains.jpg)');
+  var banner_urls = new Array('url(images/banner-yellow-bevel.jpg)','url(images/banner.jpg)','url(images/curtains.jpg)');
   return function(e)
   {
     banner_index = banner_index + 1;
