@@ -44,6 +44,7 @@
 		
 		</ul>
 	</div>
+	<s:errors/>
 	<div id="body">
          <s:layout-component name="contents"/>
     </div>

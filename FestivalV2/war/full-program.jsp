@@ -5,7 +5,7 @@
 
     ForwardResolution forwardResolution = new
 ForwardResolution(festivalv2.action.LoadPageActionBean.class);
-	forwardResolution.addParameter("pageName", "full-program");
+	forwardResolution.addParameter("page.pageName", "full-program");
     forwardResolution.execute(request, response);
 
 %> 

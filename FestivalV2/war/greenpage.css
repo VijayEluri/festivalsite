@@ -307,3 +307,9 @@ p {
 	margin-bottom: 0;
 }
 
+#oldversions {
+	display: none;
+	border: 2px solid black;
+	background-color: white;
+}
+

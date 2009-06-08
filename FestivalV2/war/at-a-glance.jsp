@@ -5,7 +5,7 @@
 
     ForwardResolution forwardResolution = new
 ForwardResolution(festivalv2.action.LoadPageActionBean.class);
-	forwardResolution.addParameter("pageName", "at-a-glance");
+	forwardResolution.addParameter("page.pageName", "at-a-glance");
     forwardResolution.execute(request, response);
 
 %> 

@@ -4,13 +4,14 @@
 
 <s:layout-render name="/WEB-INF/layouts/default.jsp">
     <s:layout-component name="contents">
-<h2>Editing the page for ${actionBean.pageName}</h2>
-<s:form beanclass="festivalv2.action.EditPageActionBean" class="page_editor">
-<s:hidden name="pageName" value="${actionBean.pageName}"/>
-<s:textarea name="content" >${actionBean.content}</s:textarea>
+<h2>Editing the page for ${actionBean.page.pageName}</h2>
+<s:form beanclass="festivalv2.action.LoadPageActionBean" class="page_editor">
+<s:hidden name="page.pageName" value="${actionBean.page.pageName}"/>
+<s:hidden name="page.id" value="${actionBean.page.id}"/>
+<s:textarea name="page.content" >${actionBean.page.content}</s:textarea>
 <s:submit name="save" value="Save"/>
 <s:submit name="cancel" value="Cancel"/>
-<button value="Help" onclick="$.facebox($('#wtfhelptext').html()); return false;" name="help">Help</button>
+<!-- <button value="Help" onclick="$.facebox($('#wtfhelptext').html()); return false;" name="help">Help</button> --> 
 </s:form>
 <div id="wtfhelptext" style="display: none">
 <h2>Paragraphs, Headers, Blockquotes</h2>

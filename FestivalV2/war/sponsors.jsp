@@ -5,7 +5,7 @@
 
     ForwardResolution forwardResolution = new
 ForwardResolution(festivalv2.action.LoadPageActionBean.class);
-	forwardResolution.addParameter("pageName", "sponsors");
+	forwardResolution.addParameter("page.pageName", "sponsors");
     forwardResolution.execute(request, response);
 
 %> 

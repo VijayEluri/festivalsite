@@ -5,7 +5,7 @@
 
     ForwardResolution forwardResolution = new
 ForwardResolution(festivalv2.action.LoadPageActionBean.class);
-	forwardResolution.addParameter("pageName", "find-us");
+	forwardResolution.addParameter("page.pageName", "find-us");
     forwardResolution.execute(request, response);
 
 %> 

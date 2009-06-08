@@ -5,7 +5,7 @@
 
     ForwardResolution forwardResolution = new
 ForwardResolution(festivalv2.action.LoadPageActionBean.class);
-	forwardResolution.addParameter("pageName", "patrons");
+	forwardResolution.addParameter("page.pageName", "patrons");
     forwardResolution.execute(request, response);
 
 %> 
