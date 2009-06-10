@@ -216,7 +216,7 @@ table.two-column td {
 	padding: 5px 12px;
 	text-decoration: none;
 	border-right: 1px solid white;
-	width: 70px;
+	/*width: 70px;*/
 	color: #EAFFED;
 	white-space: nowrap
 }
