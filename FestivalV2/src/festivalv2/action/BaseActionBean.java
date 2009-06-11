@@ -9,8 +9,12 @@
 
 package festivalv2.action;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
+import net.sourceforge.stripes.action.Message;
 import festivalv2.LoginInfo;
 import festivalv2.services.LoginServiceImpl;
 
@@ -20,6 +24,8 @@ public abstract class BaseActionBean implements ActionBean {
     private ActionBeanContext ctx;
     private LoginInfo login;
     public ActionBeanContext getContext() { return ctx; }
+    
+    
     public void setContext(ActionBeanContext ctx) { 
     	this.ctx = ctx; 
     	setOriginalUrlFromContext();
@@ -48,5 +54,22 @@ public abstract class BaseActionBean implements ActionBean {
 			originalUrl = ctx.getRequest().getRequestURI();
 		}
 	}
+	
+	private List<String> messages = new LinkedList<String>();
+
+	public List<String> getMessages() {
+		return messages;
+	}
+
+
+	public void setMessages(List<String> messages) {
+		this.messages = messages;
+	}
+	
+	public boolean isMessageAvailable(){
+		return messages.size() > 0;
+	}
+	
+	
 }
 

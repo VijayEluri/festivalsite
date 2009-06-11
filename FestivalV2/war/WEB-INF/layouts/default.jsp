@@ -44,8 +44,26 @@
 		
 		</ul>
 	</div>
-	<s:errors/>
+	
+
+	
+	
 	<div id="body">
+	<c:choose>
+        <c:when test='${actionBean.messageAvailable}'>
+			<div id="errors">
+	     		<ul>
+	     		   <c:forEach var="message" items="${actionBean.messages}">
+				     <li>
+						${message}
+				     </li>
+   					</c:forEach>
+				</ul>
+	     		</div>
+			
+        </c:when>
+    </c:choose>
+
          <s:layout-component name="contents"/>
     </div>
 	

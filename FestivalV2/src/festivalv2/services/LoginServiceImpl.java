@@ -11,7 +11,7 @@ public class LoginServiceImpl  implements
     LoginService {
 
 	private static final long serialVersionUID = 1L;
-	private static String[] ValidEmails = { "a", "james.kingston@gmail.com", "codsallartsfestival@googlemail.com", "peter.birkert@googlemail.com", "flissk@gmail.com" };
+	private static String[] ValidEmails = { "a", "james.kingston@gmail.com", "codsallartsfestival@googlemail.com", "pandab58@googlemail.com", "peter.birkert@googlemail.com", "flissk@gmail.com" };
 	static UserService userService = UserServiceFactory.getUserService();
 	
 	public LoginInfo login(String requestUri) {

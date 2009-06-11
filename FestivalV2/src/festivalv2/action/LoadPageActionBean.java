@@ -41,10 +41,10 @@ public class LoadPageActionBean extends BaseActionBean {
 		PageService pageService = new PageService();
 		try {
 			page.setId(0);
-			pageService.store(page);
+			pageService.store(page); 
 		} catch (NotLoggedInException e) {
-			getContext().getMessages().add(
-					new SimpleMessage("Cannot save: not logged in")
+			getMessages().add(
+					new SimpleMessage("Cannot save: not logged in").getMessage(getContext().getLocale())
 			);		
 		}
 			
@@ -60,6 +60,10 @@ public class LoadPageActionBean extends BaseActionBean {
 	
 
 	public String getHtml(){
+		if (page == null || page.getContent() == null){
+			return "";
+		}
+		
 		MarkdownProcessor md = new MarkdownProcessor();
 		return md.markdown(page.getContent());
 	}
@@ -75,23 +79,23 @@ public class LoadPageActionBean extends BaseActionBean {
 				page=pageService.getPage(page.getId());
 
 			} catch (PageNotFoundException e) {
-				getContext().getMessages().add(
-						new SimpleMessage("Did not have a version {0} for page {1}", page.getId(), page.getPageName()));
+				getMessages().add(
+						new SimpleMessage("Did not have a version {0} for page {1}", page.getId(), page.getPageName()).getMessage(getContext().getLocale()));
 			}
 		} else {
 			try {
 				page = pageService.getLatestPage(page.getPageName());
 			} catch (PageNotFoundException e) {
-				getContext().getMessages().add(
-						new SimpleMessage("Page {0} has not been created", page.getPageName()));			
+				getMessages().add(
+						new SimpleMessage("Page {0} has not been created", page.getPageName()).getMessage(getContext().getLocale()));			
 			}
 		}
 		
 		try {
 			setAllPages(pageService.getAllVersionsOfPage(page.getPageName()));
 		} catch (PageNotFoundException e) {
-			getContext().getMessages().add(
-					new SimpleMessage("Could not load old version of Page {0}", page.getPageName()));			
+			getMessages().add(
+					new SimpleMessage("Could not load old version of Page {0}", page.getPageName()).getMessage(getContext().getLocale()));			
 		}
 	}
 

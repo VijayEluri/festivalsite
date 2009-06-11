@@ -19,9 +19,9 @@ public class PageVersionPersistable  {
 	private Long id;
 	
 	@Persistent
-	private Text content;
+	private Text content = new Text("");
 	@Persistent
-	private String pageName;
+	private String pageName = "index";
 	@Persistent
 	private Date createdAt;
 	
