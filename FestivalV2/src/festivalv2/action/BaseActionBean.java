@@ -14,7 +14,6 @@ import java.util.List;
 
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
-import net.sourceforge.stripes.action.Message;
 import festivalv2.LoginInfo;
 import festivalv2.services.LoginServiceImpl;
 

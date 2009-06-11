@@ -40,8 +40,8 @@
 		
 		
 			<li><a href="find-us.jsp">Find Us</a></li>
-			<li><a class="last wide" href="previous-events.jsp">Previous Events</a></li>
-		
+			<li><a href="previous-events.jsp">Previous Events</a></li>
+			<li><a class="last" href="photo-competition.jsp">Competition</a></li>
 		</ul>
 	</div>
 	
