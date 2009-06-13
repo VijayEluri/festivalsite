@@ -51,7 +51,6 @@ $(document).ready(function()
 		  {
 		    $('#jsddm > li').bind('mouseover', jsddm_open);
 		    $('#jsddm > li').bind('mouseout',  jsddm_timer);
-		    $('#banner').bind("dblclick",swap_banner_onclick);
 		    $('#oldversion_trigger').bind("click", function(){
 			    $('#oldversions').slideToggle("slow");
 			});
