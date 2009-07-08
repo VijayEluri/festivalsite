@@ -20,28 +20,38 @@
 	<div id="menu">
 		<ul id="jsddm">
 			<li><a href="index.jsp">Home</a></li>
+			</li>
+			<li><a href="programme.jsp">Programme</a></li>	
+			<li class="parent"><a href="#">Events In Detail</a>	
+				<ul>
+					<li><a href="e_drama.jsp">Drama</a></li>
+					<li><a href="e_music.jsp">Music</a></li>
+					<li><a href="e_talks.jsp">Talks</a></li>
+		            <li><a href="e_photography.jsp">Photography</a></li>
+		            <li><a href="e_artsandcrafts.jsp">Arts &amp; Crafts </a></li>	           
+				</ul>
+			</li>			
+			<li><a href="e_photography.jsp">Competition</a></li>
+			<li><a href="tickets.jsp">Tickets</a></li>
+			<li><a href="find-us.jsp">Find Us</a></li>
+			<li class="parent"><a href="#">Supporters</a>
+				<ul>
+					<li><a href="patrons.jsp">Patrons</a></li>
+					<li><a href="sponsors.jsp">Sponsors</a></li>
+					<li><a href="advertisers.jsp">Advertisers</a></li>
+					<li><a href="others.jsp">Others</a></li>
+	
+				</ul>
+			</li>
 				<li class="parent"><a href="#">About Us</a>
 				<ul>
 					<li><a href="committee.jsp">Committee</a></li>
 					<li><a href="history.jsp">History</a></li>
+					<li><a href="contact-us.jsp">Contact Us</a></li>
 				</ul>
-			</li>
-			<li><a href="at-a-glance.jsp">At-a-Glance</a></li>
-			<li><a href="full-program.jsp" class="wide">Full Programme</a></li>
-			<li><a href="tickets.jsp">Tickets</a></li>
-			<li class="parent"><a href="#">Supporters</a>
-			<ul>
-				<li><a href="patrons.jsp">Patrons</a></li>
-				<li><a href="sponsors.jsp">Sponsors</a></li>
-				<li><a href="advertisers.jsp">Advertisers</a></li>
-
-			</ul>
-			</li>
-		
-		
-			<li><a href="find-us.jsp">Find Us</a></li>
 			<li><a href="previous-events.jsp">Previous Events</a></li>
-			<li><a class="last" href="photo-competition.jsp">Competition</a></li>
+			<li><a class="last" href="fringe.jsp">Fringe</a></li>
+ 
 		</ul>
 	</div>
 	
@@ -72,8 +82,8 @@
 	<div id="footer">
 	<img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/>
 	<img src="images/scclogo-sm.gif" class="logo" alt="Staffs Council"/>
-	&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
-	<br />  Registered Charity #1127064
+	E-mail: &#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+	<br />  Registered Charity No. 1127064
 	<br />  
 	
 	<c:choose>
