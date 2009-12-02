@@ -80,6 +80,7 @@
 	
 	<div id="bottom"></div>
 	<div id="footer">
+	<img src="images/coop.jpg" class="logo" alt="Mid Counties Co-op"/>
 	<img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/>
 	<img src="images/scclogo-sm.gif" class="logo" alt="Staffs Council"/>
 	E-mail: &#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;

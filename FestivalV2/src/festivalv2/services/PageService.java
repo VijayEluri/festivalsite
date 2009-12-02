@@ -61,7 +61,7 @@ public class PageService  {
 		
 		PageVersionPersistable persisted = results.get(0);
 		LOG.warning("Loaded " + persisted.getCreatedAt().toString());
-		
+		persisted.getContent();
 		return persisted;
 		} finally {
 			pm.close();
@@ -74,11 +74,7 @@ public class PageService  {
 		PersistenceManager pm = getPersistenceManager();
 		List<PageVersionPersistable> results = null;
 		try {
-		Query q = pm.newQuery(PageVersionPersistable.class);
-		q.setFilter("pageName == name");
-
-		q.declareParameters("String name");
-
+		Query q = pm.newQuery("select from " + PageVersionPersistable.class. getName() + " where pageName == '" + name + "'");
 		q.setOrdering("createdAt desc");
 
 		q.setRange(0,1);
@@ -91,7 +87,7 @@ public class PageService  {
 			throw new PageNotFoundException();
 		} else {
 			PageVersionPersistable persisted = results.get(results.size() - 1);
-			
+			persisted.getContent();
 			return persisted;
 		}
 
