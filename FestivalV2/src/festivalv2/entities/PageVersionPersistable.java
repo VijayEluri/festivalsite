@@ -18,6 +18,7 @@ public class PageVersionPersistable  {
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long id;
 	
+	//(defaultFetchGroup = "true")
 	@Persistent
 	private Text content = new Text("");
 	@Persistent

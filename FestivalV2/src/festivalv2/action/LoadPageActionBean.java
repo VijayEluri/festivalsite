@@ -1,6 +1,9 @@
 package festivalv2.action;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
@@ -9,11 +12,15 @@ import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.SimpleMessage;
 import net.sourceforge.stripes.validation.ValidateNestedProperties;
 import net.sourceforge.stripes.validation.Validate;
+
+import com.google.appengine.api.urlfetch.HTTPRequest;
 import com.petebevin.markdown.MarkdownProcessor;
+import com.sun.tools.internal.ws.wsdl.document.http.HTTPConstants;
 
 import festivalv2.NotLoggedInException;
 import festivalv2.PageNotFoundException;
 import festivalv2.entities.PageVersionPersistable;
+import festivalv2.entities.UserSession;
 import festivalv2.services.PageService;
 
 public class LoadPageActionBean extends BaseActionBean {
@@ -72,7 +79,7 @@ public class LoadPageActionBean extends BaseActionBean {
 
 	private void loadPage() {
 		PageService pageService = new PageService();
-
+		updateSession(pageService);
 		if (page.getId() !=0){
 
 			try {
@@ -100,6 +107,28 @@ public class LoadPageActionBean extends BaseActionBean {
 	}
 
 	
+	private void updateSession(PageService pageService) {
+		HttpSession httpSession = getContext().getRequest().getSession(true);
+		UserSession userSession = pageService.getSavedSession(httpSession.getId());
+		if (userSession == null){
+			userSession = new UserSession();
+			userSession.setId(httpSession.getId());
+			userSession.setStart(new Date());
+			userSession.setRefer(getContext().getRequest().getHeader("Referer"));
+			userSession.setIpAddress(getContext().getRequest().getRemoteAddr());
+		}
+		userSession.setEnd(new Date());
+		String username = (String)httpSession.getAttribute(UserSession.USER_ATTR);
+		if (username != null){
+			userSession.setEmailAddress(username);
+		}
+		
+		Date startDate
+		
+		
+	}
+
+
 	public PageVersionPersistable getPage() {
 		return page;
 	}

@@ -12,6 +12,7 @@ import javax.jdo.Query;
 import festivalv2.NotLoggedInException;
 import festivalv2.PageNotFoundException;
 import festivalv2.entities.PageVersionPersistable;
+import festivalv2.entities.UserSession;
 
 
 
@@ -128,11 +129,45 @@ public class PageService  {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	synchronized public UserSession getSavedSession(String id) {
 
+		PersistenceManager pm = getPersistenceManager();
+		List <UserSession> results = null;
+		try {
+			Query q = pm.newQuery("select from " + UserSession.class. getName() + " where id == '" + id + "'"); 
+			results = (List <UserSession>)q.execute();
+		LOG.warning("pm closed");
+		
+		if (results == null || results.size() == 0){
+			return null;
+		}
+		
+		UserSession persisted = results.get(0);
+		return persisted;
+		} finally {
+			pm.close();
+		}
+	}
+
+
+
+	synchronized public void store(UserSession userSession) {
+		PersistenceManager pm = getPersistenceManager();
+		try {
+			pm.makePersistent(userSession);
+		} finally {
+			pm.close();
+		}
+
+	}
+	
+	
 	private PersistenceManager getPersistenceManager() {
 		return PMF.getPersistenceManager();
 	}
 
+	
 
 
 }
