@@ -80,12 +80,16 @@
 	
 	<div id="bottom"></div>
 	<div id="footer">
-	<img src="images/coop.jpg" class="logo" alt="Mid Counties Co-op"/>
-	<img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/>
-	<img src="images/scclogo-sm.gif" class="logo" alt="Staffs Council"/>
-	E-mail: &#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
-	<br />  Registered Charity No. 1127064
-	<br />  
+	<a href="http://www.staffordshire.gov.uk/yourcouncil/slcf/"><img src="images/slcf-logo.jpg" class="logo" alt="Staffs Local Community Fund" /></a>
+	<a href="http://www.sstaffs.gov.uk/"><img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/></a>
+	<a href="http://www.staffordshire.gov.uk/"><img src="images/newscc.png" class="logo" alt="Staffs Council"/></a>
+	<a href="http://www.midcounties.coop/"><img src="images/coop.png" class="logo" alt="Mid Counties Co-op"/></a>
+	<br clear="both"/>
+	<br />
+	 Registered Charity No. 1127064
+	&bull; 
+	Email: &#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+	&bull;   
 	
 	<c:choose>
         <c:when test='${actionBean.login.loggedIn}'>
@@ -102,6 +106,19 @@
 	
 	</div>
 </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ?
+"https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost +
+"google-analytics.com/ga.js'
+type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12376778-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<center><a href="http://www.tinycounter.com" target="_blank" title="free hit counter"><img border="0" alt="free hit counter" src="http://mycounter.tinycounter.com/index.php?user=fmkingst"></a></center>
 </body>
 </html>
 </s:layout-definition>

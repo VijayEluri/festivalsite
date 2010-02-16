@@ -51,9 +51,14 @@ div#banner * {
 	margin-bottom: 0;
 }
 
-div#body,div#footer {
+div#body {
 	padding-left: 25px;
 	padding-right: 25px;
+}
+
+div#footer {
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 div#bottom {
@@ -74,11 +79,12 @@ div#footer {
 	padding-bottom: 10px;
 	color: white;
 	font: 12px Helvetica, Tahoma, Arial;
+	text-align: center;
 }
 
 div#footer img.logo {
-	float: right;
 	margin: 2px;
+	border-style: none;
 }
 
 div.right-bar {
