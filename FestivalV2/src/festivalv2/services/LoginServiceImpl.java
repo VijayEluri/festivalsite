@@ -11,7 +11,7 @@ public class LoginServiceImpl  implements
     LoginService {
 
 	private static final long serialVersionUID = 1L;
-	private static String[] ValidEmails = { "a", "james.kingston@gmail.com", "codsallartsfestival@googlemail.com", "pandab58@googlemail.com", "peter.birkert@googlemail.com", "flissk@gmail.com" };
+	//private static String[] ValidEmails = { "a", "james.kingston@gmail.com", "codsallartsfestival@googlemail.com", "pandab58@googlemail.com", "peter.birkert@googlemail.com", "flissk@gmail.com" };
 	static UserService userService = UserServiceFactory.getUserService();
 	
 	public LoginInfo login(String requestUri) {
@@ -32,18 +32,19 @@ public class LoginServiceImpl  implements
 	}
 
 	public static boolean isValidEmail(String email){
-		for (String valid: ValidEmails){
-			if (valid.equals(email)){
-				return true;
-			}
-		}
-		return false;
+		return true;
+		//or (String valid: ValidEmails){
+		//	if (valid.equals(email)){
+		//		return true;
+		//	}
+		//}
+		//return false;
 	}
 	
 	private static User getUser() {
 		
 		User user = userService.getCurrentUser();
-		if (user != null && isValidEmail(user.getEmail())){
+		if (user != null && userService.isUserAdmin()){
 			return user;
 		}
 		return null;
