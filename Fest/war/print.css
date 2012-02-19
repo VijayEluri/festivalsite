@@ -1,0 +1,19 @@
+div#menu{
+	display: none;
+}
+
+div#post-banner,div#post-menu {
+	clear: both;
+	margin: 0;
+	height: 0;
+	padding: 0;
+}
+
+div#footer {
+	border-top:solid 2px black;
+}
+
+div#footer img {
+	float: right;
+	margin: 2px;
+}	

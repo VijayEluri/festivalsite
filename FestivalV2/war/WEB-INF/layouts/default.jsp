@@ -27,10 +27,16 @@
 					<li><a href="e_drama.jsp">Drama</a></li>
 					<li><a href="e_music.jsp">Music</a></li>
 					<li><a href="e_talks.jsp">Talks</a></li>
-		            <li><a href="e_photography.jsp">Photography</a></li>
-		            <li><a href="e_artsandcrafts.jsp">Arts &amp; Crafts </a></li>	           
+		            <li><a href="e_artsandcrafts.jsp">Exhibitions </a></li>	           
 				</ul>
-			</li>			
+			</li>
+			<li class="parent"><a href="#">Community</a>
+				<ul>
+					<li><a href="workshops.jsp">Workshops</a></li>
+					<li><a href="fringe.jsp">Fringe</a></li>
+					<li><a href="links.jsp">Community Links</a></li>
+				</ul>
+            </li>			
 			<li><a href="e_photography.jsp">Competition</a></li>
 			<li><a href="tickets.jsp">Tickets</a></li>
 			<li><a href="find-us.jsp">Find Us</a></li>
@@ -39,19 +45,18 @@
 					<li><a href="patrons.jsp">Patrons</a></li>
 					<li><a href="sponsors.jsp">Sponsors</a></li>
 					<li><a href="advertisers.jsp">Advertisers</a></li>
-					<li><a href="others.jsp">Others</a></li>
+					<li><a href="volunteers.jsp">Volunteers</a></li>
 	
 				</ul>
 			</li>
-				<li class="parent"><a href="#">About Us</a>
+			<li class="parent"><a href="#">About Us</a>
 				<ul>
 					<li><a href="committee.jsp">Committee</a></li>
 					<li><a href="history.jsp">History</a></li>
 					<li><a href="contact-us.jsp">Contact Us</a></li>
 				</ul>
+			</li>
 			<li><a href="previous-events.jsp">Previous Events</a></li>
-			<li><a class="last" href="fringe.jsp">Fringe</a></li>
- 
 		</ul>
 	</div>
 	
@@ -84,6 +89,7 @@
 	<a href="http://www.sstaffs.gov.uk/"><img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/></a>
 	<a href="http://www.staffordshire.gov.uk/"><img src="images/newscc.png" class="logo" alt="Staffs Council"/></a>
 	<a href="http://www.midcounties.coop/"><img src="images/coop.png" class="logo" alt="Mid Counties Co-op"/></a>
+	<a href="/links.jsp"><img src="images/community.png" class="logo" alt="Community Links"/></a>
 	<br clear="both"/>
 	<br />
 	 Registered Charity No. 1127064

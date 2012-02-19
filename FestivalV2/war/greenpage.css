@@ -8,7 +8,7 @@ body {
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #3ac034;
-	font-family: "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 	text-align: center;
 	margin: 0px;
@@ -26,6 +26,10 @@ table#eventstable a:link, table#eventstable a:visited {
 
 table#eventstable a:hover {
 	text-decoration: underline;
+}
+
+#eventstable tr.row {
+ 	height: 150px;
 }
 
 div#page-panel {
@@ -57,8 +61,8 @@ div#body {
 }
 
 div#footer {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 div#bottom {
@@ -78,7 +82,7 @@ div#body {
 div#footer {
 	padding-bottom: 10px;
 	color: white;
-	font: 12px Helvetica, Tahoma, Arial;
+	font: 12px Calibri, Helvetica, Tahoma, Arial;
 	text-align: center;
 }
 
@@ -99,13 +103,13 @@ div#post-banner,div#post-menu,div#post-body {
 }
 
 h1 {
-	font-family: "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
+	font-family: "Calibri", "Century Gothic", "Helvetica", "MS Sans Serif", Geneva,
 		sans-serif;
 	font-variant: small-caps;
 }
 
 h2,h3,h4,h5,h6 {
-	font-family: "Century Gothic", "MS Sans Serif", Geneva, sans-serif;
+	font-family: "Calibri", "Century Gothic", "MS Sans Serif", Geneva, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -207,7 +211,7 @@ table.two-column td {
 #jsddm li {
 	float: left;
 	list-style: none;
-	font: 12px Helvetica, Tahoma, Arial;
+	font: 12px Calibri, Helvetica, Tahoma, Arial;
 	padding-top: 3px;
 }
 
@@ -311,6 +315,23 @@ p {
 	margin-bottom: 0;
 }
 
+div#pressreleases {
+	float:right;
+	height: 130px;
+	width: 242px;
+	margin-right: 12px;
+	margin-bottom: 10px;
+	overflow: auto;
+	border: 3px solid #0ADA0A;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+
+
+
 #oldversions {
 	display: none;
 	border: 2px solid black;
@@ -323,7 +344,7 @@ a.music {
 	padding: 5px 0;
 	color: #993300;
 	font-size: xx-small;
-	font-family: "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 }
 
@@ -332,7 +353,7 @@ a.artsandcrafts {
 	padding: 5px 0;
 	color: #33CC00;
 	font-size: xx-small;
-	font-family: "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 }
 
@@ -341,7 +362,7 @@ a.drama {
 	padding: 5px 0;
 	color: #336600;
 	font-size: xx-small;
-	font-family: "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 }
 
@@ -350,7 +371,7 @@ a.photography {
 	padding: 5px 0;
 	color: #330099;
 	font-size: xx-small;
-	font-family: "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 }
 
@@ -359,11 +380,7 @@ a.talks {
 	padding: 5px 0;
 	color: #990066;
 	font-size: xx-small;
-	font-family: "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
+	font-family: "Calibri", "Verdana", "Times New Roman", "Helvetica", "Century Gothic",
 		"MS Sans Serif", Geneva, sans-serif;
 }
- #eventstable tr.row {
- 	height: 150px;
-
- }
 
