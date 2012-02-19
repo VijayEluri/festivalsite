@@ -1,0 +1,11 @@
+<!-- Indices written at Wed, 3 Jun 2009 23:29:59 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 13 times in query history -->
+    <datastore-index kind="PageVersionPersistable" ancestor="false" source="auto">
+        <property name="pageName" direction="asc"/>
+        <property name="createdAt" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

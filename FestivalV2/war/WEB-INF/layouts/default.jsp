@@ -27,10 +27,16 @@
 					<li><a href="e_drama.jsp">Drama</a></li>
 					<li><a href="e_music.jsp">Music</a></li>
 					<li><a href="e_talks.jsp">Talks</a></li>
-		            <li><a href="e_photography.jsp">Photography</a></li>
-		            <li><a href="e_artsandcrafts.jsp">Arts &amp; Crafts </a></li>	           
+		            <li><a href="e_artsandcrafts.jsp">Exhibitions </a></li>	           
 				</ul>
-			</li>			
+			</li>
+			<li class="parent"><a href="#">Community</a>
+				<ul>
+					<li><a href="workshops.jsp">Workshops</a></li>
+					<li><a href="fringe.jsp">Fringe</a></li>
+					<li><a href="links.jsp">Community Links</a></li>
+				</ul>
+            </li>			
 			<li><a href="e_photography.jsp">Competition</a></li>
 			<li><a href="tickets.jsp">Tickets</a></li>
 			<li><a href="find-us.jsp">Find Us</a></li>
@@ -39,19 +45,18 @@
 					<li><a href="patrons.jsp">Patrons</a></li>
 					<li><a href="sponsors.jsp">Sponsors</a></li>
 					<li><a href="advertisers.jsp">Advertisers</a></li>
-					<li><a href="others.jsp">Others</a></li>
+					<li><a href="volunteers.jsp">Volunteers</a></li>
 	
 				</ul>
 			</li>
-				<li class="parent"><a href="#">About Us</a>
+			<li class="parent"><a href="#">About Us</a>
 				<ul>
 					<li><a href="committee.jsp">Committee</a></li>
 					<li><a href="history.jsp">History</a></li>
 					<li><a href="contact-us.jsp">Contact Us</a></li>
 				</ul>
+			</li>
 			<li><a href="previous-events.jsp">Previous Events</a></li>
-			<li><a class="last" href="fringe.jsp">Fringe</a></li>
- 
 		</ul>
 	</div>
 	
@@ -80,12 +85,19 @@
 	
 	<div id="bottom"></div>
 	<div id="footer">
-	<img src="images/coop.jpg" class="logo" alt="Mid Counties Co-op"/>
-	<img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/>
-	<img src="images/scclogo-sm.gif" class="logo" alt="Staffs Council"/>
-	E-mail: &#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
-	<br />  Registered Charity No. 1127064
-	<br />  
+	<a href="http://www.staffordshire.gov.uk/yourcouncil/slcf/"><img src="images/slcf-logo.jpg" class="logo" alt="Staffs Local Community Fund" /></a>
+	<a href="http://www.sstaffs.gov.uk/"><img src="images/southstaffs.gif" class="logo" alt="South Staffs Council"/></a>
+	<a href="http://www.staffordshire.gov.uk/"><img src="images/newscc.png" class="logo" alt="Staffs Council"/></a>
+	<a href="http://www.midcounties.coop/"><img src="images/coop.png" class="logo" alt="Mid Counties Co-op"/></a>
+	<a href="/links.jsp"><img src="images/community.png" class="logo" alt="Community Links"/></a>
+	<br clear="both"/>
+	<br />
+	 Registered Charity No. 1127064
+	&bull; 
+	Email: <a href="mailto:&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+	&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+	</a>
+	&bull;   
 	
 	<c:choose>
         <c:when test='${actionBean.login.loggedIn}'>
@@ -102,6 +114,19 @@
 	
 	</div>
 </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ?
+"https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost +
+"google-analytics.com/ga.js'
+type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12376778-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<center><a href="http://www.tinycounter.com" target="_blank" title="free hit counter"><img border="0" alt="free hit counter" src="http://mycounter.tinycounter.com/index.php?user=fmkingst"></a></center>
 </body>
 </html>
 </s:layout-definition>
