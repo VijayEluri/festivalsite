@@ -10,7 +10,7 @@
 <script src="js/jquery-1.3.2.min.js" ></script>
 <script src="js/default.js" ></script>
 <link rel="stylesheet" href="greenpage.css" type="text/css"	 />
-<!--  <link rel="stylesheet" href="print.css" type="text/css" media="print" /> -->
+
 </head>
 <body>
 <div id="page-panel">
@@ -22,12 +22,23 @@
 			<li><a href="index.jsp">Home</a></li>
 			</li>
 			<li><a href="programme.jsp">Programme</a></li>	
-			<li class="parent"><a href="#">Events In Detail</a>	
+			<li class="parent"><a href="#">Events</a>	
 				<ul>
 					<li><a href="e_drama.jsp">Drama</a></li>
 					<li><a href="e_music.jsp">Music</a></li>
 					<li><a href="e_talks.jsp">Talks</a></li>
-		            <li><a href="e_artsandcrafts.jsp">Exhibitions </a></li>	           
+		            <li><a href="e_artsandcrafts.jsp">Exhibitions</a></li>	           
+				</ul>
+			</li>
+        	<li><a href="tickets.jsp">Tickets</a></li>			
+			<li><a href="e_photography.jsp">Competition</a></li>
+			<li><a href="find-us.jsp">Find Us</a></li>
+			<li class="parent"><a href="#">Supporters</a>
+				<ul>
+					<li><a href="patrons.jsp">Patrons</a></li>
+					<li><a href="sponsors.jsp">Sponsors</a></li>
+					<li><a href="advertisers.jsp">Advertisers</a></li>
+					<li><a href="volunteers.jsp">Volunteers</a></li>
 				</ul>
 			</li>
 			<li class="parent"><a href="#">Community</a>
@@ -37,26 +48,14 @@
 					<li><a href="links.jsp">Community Links</a></li>
 				</ul>
             </li>			
-			<li><a href="e_photography.jsp">Competition</a></li>
-			<li><a href="tickets.jsp">Tickets</a></li>
-			<li><a href="find-us.jsp">Find Us</a></li>
-			<li class="parent"><a href="#">Supporters</a>
-				<ul>
-					<li><a href="patrons.jsp">Patrons</a></li>
-					<li><a href="sponsors.jsp">Sponsors</a></li>
-					<li><a href="advertisers.jsp">Advertisers</a></li>
-					<li><a href="volunteers.jsp">Volunteers</a></li>
-	
-				</ul>
-			</li>
 			<li class="parent"><a href="#">About Us</a>
 				<ul>
 					<li><a href="committee.jsp">Committee</a></li>
 					<li><a href="history.jsp">History</a></li>
 					<li><a href="contact-us.jsp">Contact Us</a></li>
+					<li><a href="previous-events.jsp">Previous Events</a></li>
 				</ul>
 			</li>
-			<li><a href="previous-events.jsp">Previous Events</a></li>
 		</ul>
 	</div>
 	
@@ -94,8 +93,8 @@
 	<br />
 	 Registered Charity No. 1127064
 	&bull; 
-	Email: <a href="mailto:&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
-	&#099;&#111;&#100;&#115;&#097;&#108;&#108;&#097;&#114;&#116;&#115;&#102;&#101;&#115;&#116;&#105;&#118;&#097;&#108;&#064;&#103;&#111;&#111;&#103;&#108;&#101;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+	Email: <a href="mailto:codsallartsfestival@gmail.com">
+	codsallartsfestival@gmail.com
 	</a>
 	&bull;   
 	
